@@ -198,33 +198,6 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.chocolatesaltyballs" name="[COLORorange]Chocolate Salty Balls[/COLOR]" version="1.7" provider-name="[COLORlimegreen]Team Deez Nutz[/COLOR]">
-    <requires>
-        <import addon="xbmc.python" version="2.19.0" />
-        <import addon="script.module.universalscrapers" version="1.0.0" />
-        <import addon="script.module.python.koding.aio" version="0.9.6.6" />
-        <import addon="script.module.beautifulsoup" version="3.2.1" />
-        <import addon="script.module.requests" version="2.9.1" />
-        <import addon="script.module.addon.common" version="2.0.0" />
-        <import addon="script.module.xmltodict" version="0.9.0" />
-        <import addon="script.module.resolveurl" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" start="[login|startup]" />
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">Big Chocolate Salty Balls</summary>
-      <description lang="en">Brought to you by Team Deez Nutz</description>
-      <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
-</disclaimer>
-      <platform>all</platform>
-      <license>Beerware rev. 42</license>
-    </extension>
-</addon>
-
 <addon id="plugin.video.f4mTester" name="f4mTester" version="2.7.2" provider-name="Shani">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -301,42 +274,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
         <website>http://www.tantrumtv.com</website>
         <video_guide></video_guide>
     </extension>
-</addon>
-
-<addon id="plugin.video.placenta" version="1.2.1" name="Placenta" provider-name="Team Afterbirth">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0" />
-		<import addon="script.module.placenta" />
-		<import addon="script.placenta.artwork" version="1.0.0" />
-		<import addon="script.placenta.metadata" version="1.0.0" />
-		<import addon="script.module.resolveurl" />
-		<import addon="script.module.requests" />
-		<import addon="script.module.metahandler" version="1.0.0" />
-        <import addon="plugin.video.youtube"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-        <provides>audio</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Placenta</summary>
-		<description>Covenant Fork from Echo/Colossus era with Team Afterbirth's updates and new code.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
-</disclaimer>
-		<platform>all</platform>
-		<license>Beerware rev. 42</license>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-    			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
-		</assets>
-		<news></news>
-	</extension>
 </addon>
 
 <addon id="plugin.video.powerfuljre" name="The Joe Rogan Experience" version="1.0.0" provider-name="MuadDib">
@@ -472,32 +409,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
         <description>Tantrum.TV Official Repository</description>
         <platform>all</platform>
         <genre>movies,usa</genre>
-    </extension>
-</addon>
-
-<addon id="resource.images.tantrumicons" name="Tantrum.TV Icon Collection" version="1.0.3" provider-name="MuadDib">
-    <extension point="kodi.resource.images" compile="false" type="icons" />
-    <requires>
-        <import addon="kodi.resource" version="1.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Tantrum.TV Icon Image Set</summary>
-        <description lang="en">This is an image set used by the Tantrum.TV Themes</description>
-        <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-        <platform>all</platform>
-    </extension>
-</addon>
-
-<addon id="resource.images.weatherfanart.tantrum" name="Tantrum.TV Weather Fanart" version="1.0.0" provider-name="MuadDib">
-    <extension point="kodi.resource.images" compile="false" type="weather" />
-    <requires>
-        <import addon="kodi.resource" version="1.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Tantrum.TV Weather Image Set</summary>
-        <description lang="en">This is an image set to replace the default weather icons/images used in Kodi</description>
-        <disclaimer lang="en">The author does not own or host any content found within this Addon. The author is not connected to or in any other way affiliated with Kodi, Team Kodi, or the XBMC Foundation.</disclaimer>
-        <platform>all</platform>
     </extension>
 </addon>
 
@@ -713,20 +624,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="script.module.placenta" name="Placenta Module" version="1.2.9" provider-name="Team Afterbirth">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0" />
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="en">Placenta</summary>
-		<description>Covenant Fork from Echo/Colossus era with Team Afterbirth's updates and new code.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
-	</extension>
-</addon>
-
 <addon id="script.module.python.koding.aio"
    name="Python Koding AIO"
    version="0.9.9.4.3"
@@ -893,38 +790,6 @@ This is a Non-profit resource, organized solely for educational purposes which i
   </extension>
 </addon>
 
-<addon id="script.placenta.artwork" version="1.0.7" name="Placenta Artwork" provider-name="Team Afterbirth">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary>Themes for the Placenta Addon</summary>
-		<description>Artwork Module for the Placenta Addon</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="script.placenta.metadata" version="1.0.1" name="Placenta Metadata" provider-name="Team Afterbirth">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary>Metadata for the Placenta Addon</summary>
-		<description>Metadata for Placenta are maintained separately to make distribution of the the addon itself easier/faster.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
-		<platform>all</platform>
-	</extension>
-</addon>
-
 <addon id="script.video.F4mProxy" name="F4mProxy" version="2.8.8" provider-name="Shani">
     <requires>
         <import addon="xbmc.python" version="2.1.0" />
@@ -1060,65 +925,5 @@ This is a Non-profit resource, organized solely for educational purposes which i
 			<fanart>resources/fanart.jpg</fanart>
 		</assets>
 	</extension>
-</addon>
-
-<addon id="skin.tantrumlightred" version="1.4.4" name="Tantrum.TV Light Red" provider-name="MuadDib, Jezz_X, Team Kodi">
-    <requires>
-        <import addon="xbmc.gui" version="5.12.0"/>
-        <import addon="resource.images.weatherfanart.tantrum" version="1.0.0"/>
-        <import addon="resource.images.tantrumicons" version="1.0.3"/>
-    </requires>
-    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
-        <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Tantrum.TV Skin, ported from Confluence</summary>
-        <description lang="en">Tantrum.TV Red Skin, ported from Confluence. This is designed specifically for our standard build.</description>
-        <disclaimer lang="en">For help and support ... Please visit our group on Facebook!</disclaimer>
-        <platform>all</platform>
-        <license>GNU General Public License version 2</license>
-        <forum>https://www.facebook.com/groups/1709673909327662/</forum>
-        <website>http://www.tantrumtv.com</website>
-        <email/>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
-            <screenshot>resources/screenshot-01.jpg</screenshot>
-            <screenshot>resources/screenshot-02.jpg</screenshot>
-            <screenshot>resources/screenshot-03.jpg</screenshot>
-            <screenshot>resources/screenshot-04.jpg</screenshot>
-        </assets>
-        <news></news>
-    </extension>
-</addon>
-
-<addon id="skin.tantrumlightreda" version="1.4.4" name="Tantrum.TV Light Red (Adult)" provider-name="MuadDib, Jezz_X, Team Kodi">
-    <requires>
-        <import addon="xbmc.gui" version="5.12.0"/>
-        <import addon="resource.images.weatherfanart.tantrum" version="1.0.0"/>
-        <import addon="resource.images.tantrumicons" version="1.0.3"/>
-    </requires>
-    <extension point="xbmc.gui.skin" debugging="false" effectslowdown="1.0">
-        <res width="1280" height="720" aspect="16:9" default="true" folder="720p" />
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">Tantrum.TV Skin, ported from Confluence</summary>
-        <description lang="en">Tantrum.TV Red Skin, ported from Confluence. This is designed specifically for our Adult Build</description>
-        <disclaimer lang="en">For help and support ... Please visit our group on Facebook!</disclaimer>
-        <platform>all</platform>
-        <license>GNU General Public License version 2</license>
-        <forum>https://www.facebook.com/groups/1709673909327662/</forum>
-        <website>http://www.tantrumtv.com</website>
-        <email/>
-        <assets>
-            <icon>resources/icon.png</icon>
-            <fanart>resources/fanart.jpg</fanart>
-            <screenshot>resources/screenshot-01.jpg</screenshot>
-            <screenshot>resources/screenshot-02.jpg</screenshot>
-            <screenshot>resources/screenshot-03.jpg</screenshot>
-            <screenshot>resources/screenshot-04.jpg</screenshot>
-        </assets>
-        <news></news>
-    </extension>
 </addon>
 </addons>
