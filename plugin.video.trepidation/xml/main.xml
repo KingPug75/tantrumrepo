@@ -34,6 +34,13 @@
 </dir>
 
 <dir>
+    <title>[B][COLOR white]The Chin[/COLOR][/B]</title>
+    <link>file://thechin.xml</link>
+    <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/thechin.png</thumbnail>
+    <fanart>special://home/addons/plugin.video.trepidation/fanart.jpg</fanart>
+</dir>
+
+<dir>
     <title>[B][COLOR white]Diamonds in the Rough[/COLOR][/B]</title>
     <link>file://diamonds.xml</link>
     <thumbnail>special://home/addons/plugin.video.trepidation/resources/media/diamonds.png</thumbnail>
