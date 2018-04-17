@@ -198,7 +198,7 @@
     </extension>
 </addon>
 
-<addon id="plugin.video.bobomk" name="The Knob" version="0.0.2" provider-name="69 Squad">
+<addon id="plugin.video.bobomk" name="The Knob" version="0.0.2a" provider-name="69 Squad">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
