@@ -1,3 +1,6 @@
+v0.0.3
+    - Optimized Jen Plugin for speed in the submenus.
+
 v0.0.2
     - Update for base template code
 
