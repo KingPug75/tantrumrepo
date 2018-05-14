@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addons>
-<addon id="plugin.audio.69podcastone" name="P[COLOR red]o[/COLOR]dcast[COLOR red]One[/COLOR]" version="0.0.1a" provider-name="69 Death Squad">
+<addon id="plugin.audio.69podcastone" name="P[COLOR red]o[/COLOR]dcast[COLOR red]One[/COLOR]" version="0.0.1c" provider-name="69 Death Squad">
     <requires>
         <import addon="xbmc.python" version="2.19.0" />
         <import addon="script.module.universalscrapers" version="1.0.0" />
