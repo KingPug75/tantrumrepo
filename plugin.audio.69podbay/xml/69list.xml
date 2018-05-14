@@ -1,0 +1,61 @@
+<69deathsquad>
+    <dir>
+        <title>The Joe Rogan Experience</title>
+        <podbay>pbshow/360084272</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/jr.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Kickass News</title>
+        <podbay>pbshow/1027264941</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/kan.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Armchair Expert with Dax Shepard</title>
+        <podbay>pbshow/1345682353</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/ace.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Brown Chicken Brown Cow Podcast</title>
+        <podbay>pbshow/1251147551</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/bcbc.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Last Podcast On The Left</title>
+        <podbay>pbshow/437299706</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/lpo.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Sips, Suds, & Smokes</title>
+        <podbay>pbshow/590067714</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/sss.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Casefile True Crime</title>
+        <podbay>pbshow/998568017</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/cf.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Rock N Roll Archaeology</title>
+        <podbay>pbshow/1052989183</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/rar.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Duolingo Spanish Podcast</title>
+        <podbay>pbshow/1317493077</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/duo.png</thumbnail>
+    </dir>
+
+    <dir>
+        <title>Tumanbay</title>
+        <podbay>pbshow/1278345733</podbay>
+        <thumbnail>special://home/addons/plugin.audio.69podbay/resources/media/tum.png</thumbnail>
+    </dir>
+</69deathsquad>

@@ -1,5 +1,10 @@
 <69deathsquad>
     <dir>
+        <title>[COLOR yellow]69 Death Squad - Recommended Shows[/COLOR]</title>
+        <link>file://69list.xml</link>
+    </dir>
+
+    <dir>
         <title>Featured Podcasts</title>
         <podcastone>pcocategory/featured-podcasts</podcastone>
     </dir>
@@ -7,11 +12,6 @@
     <dir>
         <title>New Podcasts</title>
         <podcastone>pcocategory/new-podcasts</podcastone>
-    </dir>
-
-    <dir>
-        <title>All Podcasts</title>
-        <podcastone>pcocategory/podcasts</podcastone>
     </dir>
 
     <dir>
