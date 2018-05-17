@@ -1,0 +1,10 @@
+<thedocs>
+    <dir>
+        <title>Documentary Heaven</title>
+        <link>file://docuheaven.xml</link>
+    </dir>
+    <dir>
+        <title>Top Documentaries</title>
+        <link>file://topdocs.xml</link>
+    </dir>
+</thedocs>
