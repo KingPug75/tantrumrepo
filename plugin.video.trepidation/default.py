@@ -17,16 +17,20 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 import __builtin__
+import xbmcaddon
 
 # CONFIGURATION VARIABLES
 # -----------------------
-# change these to suit your addons
-root_xml_url = "file://main.xml"  # url of the root xml file
-__builtin__.tvdb_api_key = "88334746894B8A90"  # tvdb api key
-__builtin__.tmdb_api_key = "622a98be4ab1593cb294f066daed0b5c"  # tmdb api key
-__builtin__.trakt_client_id = "66023196c1ea7a6e4174ec63523ed4ab148c43c15e367e42536d5f6849a686aa"  # trakt client id
-__builtin__.trakt_client_secret = "aec9456c661a0a0e90e9c694b471b2d2ed993cc3adddacb35463fc2c3f21307c"  # trakt client secret
-__builtin__.search_db_location = ""  # location of search db
+addon_id = xbmcaddon.Addon().getAddonInfo('id')
+ownAddon = xbmcaddon.Addon(id=addon_id)
+enable_installa = ownAddon.getSetting('dlimage')
+enable_newswin = ownAddon.getSetting('news_win')
+root_xml_url = ownAddon.getSetting('root_xml')
+__builtin__.tvdb_api_key = ownAddon.getSetting('tvdb_api_key')
+__builtin__.tmdb_api_key = ownAddon.getSetting('tmdb_api_key')
+__builtin__.trakt_client_id = ownAddon.getSetting('trakt_api_client_id')
+__builtin__.trakt_client_secret = ownAddon.getSetting('trakt_api_client_secret')
+__builtin__.search_db_location = ownAddon.getSetting('search_db_location')
 
 import os
 import sys
@@ -34,13 +38,12 @@ import sys
 import koding
 import koding.router as router
 from resources.lib.installa import Dialog_specific
-from resources.lib.news_window import News_Updates
+from resources.lib.news_window import Dialog_Example
 import resources.lib.search
 import resources.lib.sources
 import resources.lib.testings
 import resources.lib.util.info
 import xbmc
-import xbmcaddon
 import xbmcplugin
 from koding import route
 from resources.lib.util.xml import JenList, display_list
@@ -50,22 +53,17 @@ from language import get_string as _
 from resources.lib.plugin import run_hook
 
 
-addon_id = xbmcaddon.Addon().getAddonInfo('id')
 addon_name = xbmcaddon.Addon().getAddonInfo('name')
 home_folder = xbmc.translatePath('special://home/')
 addon_folder = os.path.join(home_folder, 'addons')
 art_path = os.path.join(addon_folder, addon_id)
-media_path = os.path.join(addon_folder, addon_id, 'resources/media')
 content_type = "files"
-ownAddon = xbmcaddon.Addon(id=addon_id)
-enable_installa = ownAddon.getSetting('dlimage')
-enable_newswin = ownAddon.getSetting('news_win')
 
 @route("main")
 def root():
     """root menu of the addon"""
     if enable_newswin == 'true':
-        koding.Add_Dir(name='[COLOR=yellow][B]Latest News And Updates[/B][/COLOR]', url='{"my_text":"Latest News[CR]!!!","my_desc":""}', mode='dialog_my_news', folder=False, icon=os.path.join(media_path,'updates.png'), fanart=os.path.join(art_path,'fanart.jpg'))
+        koding.Add_Dir(name='Latest News And Updates', url='{"my_text":"Latest News[CR]!!!","my_desc":""}', mode='dialog_example', folder=False, icon=os.path.join(art_path,'icon.png'), fanart=os.path.join(art_path,'fanart.jpg'))
     if not get_list(root_xml_url):
         koding.Add_Dir(
             name=_("Message"),
@@ -93,9 +91,6 @@ def root():
             content_type="")
     if enable_installa =='true':
         koding.Add_Dir(name='Download Backgrounds', url='{"my_text":"INSTALLA[CR]!!!","my_desc":""}', mode='dialog_specific', folder=False, icon=os.path.join(art_path,'icon.png'), fanart=os.path.join(art_path,'fanart.jpg'))
-    koding.Add_Dir(name='[COLOR=snow]Follow on Twitter:[/COLOR] [COLOR=springgreen]@tantrumdev[/COLOR]', url='line', mode='section_item', folder=False, icon=os.path.join(media_path,'twitter.png'), fanart=os.path.join(art_path,'fanart.jpg'))
-    koding.Add_Dir(name='[COLOR=snow]Subscribe on YouTube:[/COLOR] [COLOR=springgreen]http://youtube.tantrumtv.com[/COLOR]',  url='line', mode='section_item', folder=False, icon=os.path.join(media_path,'youtube.png'), fanart=os.path.join(art_path,'fanart.jpg'))
-
 
 @route(mode='get_list_uncached', args=["url"])
 def get_list_uncached(url):
@@ -153,11 +148,6 @@ def all_episodes(url):
         result_items.extend(jen_list.get_list(skip_dialog=True))
     content_type = "episodes"
     display_list(result_items, "episodes")
-
-
-@route(mode="section_item")
-def section_item():
-    quit()
 
 
 @route(mode="Settings")

@@ -1,9 +1,9 @@
-# Addon Name: Tis The Season
-# Addon id: plugin.video.tistheseason
+# Addon Name: Tis the Season
+# Addon id: plugin.video.thistheseason
 # Addon Provider: MuadDib
 msgid ""
 msgstr ""
-"Project-Id-Version: Jen\n"
+"Project-Id-Version: Tis the Season\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-11-04 18:56+0200\n"
 "Last-Translator: A. Dambledore\n"

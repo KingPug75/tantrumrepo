@@ -20,25 +20,16 @@ from koding import Download
 from koding import route, Run 
 
 
-message_xml_url = "https://pastebin.com/raw/LfHXui5H"
+message_xml_url = "http://YOUR_URL.co.uk/message.xml"
 
-@route(mode="dialog_my_news")
-def News_Updates():
+@route(mode="dialog_example")
+def Dialog_Example():
     
     koding_test = message_xml_url
-    mytest = ''
-    if 'http' in koding_test:
-        import urllib2
-        req = urllib2.Request(koding_test)
-        req.add_header('User-Agent', 'klopp')
-        response = urllib2.urlopen(req)
-        mytext = response.read()
-        response.close()
-    else:
-        mytext = koding.Text_File(path=koding_test, mode='r')
+    mytext = koding.Text_File(path=koding_test, mode='r')
     
     main_text = mytext
     my_buttons = ['Close']
-    my_choice = koding.Custom_Dialog(main_content=main_text,pos='center',size='900x600',buttons=my_buttons,transparency=90,highlight_color='yellow',header='Latest News and Updates')
+    my_choice = koding.Custom_Dialog(main_content=main_text,pos='center',size='900x600',buttons=my_buttons,transparency=90,highlight_color='yellow',header='Latest News')
     if my_choice ==0: 
         root()
