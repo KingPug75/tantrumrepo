@@ -1,7 +1,7 @@
 <xml>
     <plugin>
         <name>SQUAD CONTROL: Customization</name>
-        <link>plugin://plugin.video.squadcontrol/?mode=openSettings&url=query=0.0</link>
+        <mysettings>0/0</mysettings>
         <thumbnail>special://home/addons/plugin.video.squadcontrol/resources/media/settings.png</thumbnail>
         <fanart>special://home/addons/plugin.video.squadcontrol/resources/media/settings.jpg</fanart>
         <info>Open the Settings for the addon on the Customization tab</info>
@@ -9,7 +9,7 @@
 
     <plugin>
         <name>SQUAD CONTROL: General</name>
-        <link>plugin://plugin.video.squadcontrol/?mode=openSettings&url=query=1.0</link>
+        <mysettings>1/0</mysettings>
         <thumbnail>special://home/addons/plugin.video.squadcontrol/resources/media/settings.png</thumbnail>
         <fanart>special://home/addons/plugin.video.squadcontrol/resources/media/settings.jpg</fanart>
         <info>Open the Settings for the addon on the General tab</info>

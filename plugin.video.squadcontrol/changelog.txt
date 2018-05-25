@@ -1,3 +1,6 @@
+v0.0.3
+    - Icon Updates for main menu
+
 v0.0.2
     - Updated to Jen Template Core v1.5
 
