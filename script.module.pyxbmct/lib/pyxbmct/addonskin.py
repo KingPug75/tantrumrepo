@@ -5,22 +5,22 @@
 # Licence: GPL v.3 <http://www.gnu.org/licenses/gpl.html>
 """Classes for defining the appearance of PyXBMCt Windows and Controls"""
 
+from __future__ import unicode_literals
+from future.utils import with_metaclass
 import os
-from abc import ABCMeta, abstractproperty
+from abc import ABCMeta, abstractmethod
 import xbmc
 from xbmcaddon import Addon
 
 
-class BaseSkin(object):
+class BaseSkin(with_metaclass(ABCMeta, object)):
     """
     Abstract class for creating fully customized skins
 
     .. warning:: This class is meant for subclassing and cannot be instantiated directly!
         A sublcass must implement all the following properties.
     """
-    __metaclass__ = ABCMeta
-
-    @abstractproperty
+    @abstractmethod
     def images(self):
         """
         Get the base directory for image files
@@ -29,7 +29,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def x_margin(self):
         """
         Get horizontal adjustment for the header background
@@ -39,7 +39,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def y_margin(self):
         """
         Get vertical adjustment for the header background
@@ -49,7 +49,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def title_bar_x_shift(self):
         """
         Get horizontal adjustment for title bar texture
@@ -58,7 +58,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def title_bar_y_shift(self):
         """
         Get vertical adjustment for title bar texture
@@ -67,7 +67,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def title_back_y_shift(self):
         """
         Get header position adjustment
@@ -77,7 +77,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def header_height(self):
         """
         Get the height of a window header
@@ -87,7 +87,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def close_btn_width(self):
         """
         Get the width of the top-right close button
@@ -96,7 +96,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def close_btn_height(self):
         """
         Get the height of the top-right close button
@@ -105,7 +105,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def close_btn_x_offset(self):
         """
         Get close button horizontal adjustment
@@ -114,7 +114,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def close_btn_y_offset(self):
         """
         Get close button vertical adjustment
@@ -123,7 +123,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def header_align(self):
         """
         Get a numeric value for header text alignment
@@ -137,7 +137,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def header_text_color(self):
         """
         Get the color of the header text
@@ -146,7 +146,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def background_img(self):
         """
         Get dialog background texture
@@ -155,7 +155,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def title_background_img(self):
         """
         Get title bar background texture
@@ -164,7 +164,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def close_button_focus(self):
         """
         Get close button focused texture
@@ -173,7 +173,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def close_button_no_focus(self):
         """
         Get close button unfocused texture
@@ -182,7 +182,7 @@ class BaseSkin(object):
         """
         return
 
-    @abstractproperty
+    @abstractmethod
     def main_bg_img(self):
         """
         Get fullscreen background for
@@ -203,7 +203,7 @@ class Skin(BaseSkin):
     def __init__(self):
         kodi_version = xbmc.getInfoLabel('System.BuildVersion')[:2]
         # Kodistubs return an empty string
-        if kodi_version and int(kodi_version) >= 17:
+        if kodi_version and kodi_version >= '17':
             self._estuary = True
         else:
             self._estuary = False
