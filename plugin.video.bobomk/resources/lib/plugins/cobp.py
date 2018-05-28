@@ -19,13 +19,15 @@
 
     Usage Examples:
 
-<dir>
-<title>Collection of Best Porn - Display Category content</title>
-<cobp>category/squirting</sport_stream>
-</dir>
+    <dir>
+        <title>Display Category content</title>
+        <cobp>category/squirting</cobp>
+    </dir>
 
-
-
+    <dir>
+        <title>Search</title>
+        <cobp>csearch</cobp>
+    </dir>
 
 """
 
@@ -44,6 +46,8 @@ CACHE_TIME = 3600  # change to wanted cache time in seconds
 
 addon_fanart = xbmcaddon.Addon().getAddonInfo('fanart')
 addon_icon = xbmcaddon.Addon().getAddonInfo('icon')
+next_icon = os.path.join(xbmc.translatePath(xbmcaddon.Addon().getAddonInfo('path')), 'resources', 'media', 'next.png')
+
 User_Agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36'
 
 class COBP(Plugin):
@@ -69,7 +73,41 @@ class COBP(Plugin):
                     'context': get_context_items(item),
                     "summary": item.get("summary", None)
                 }
-            elif "category" in item.get("cobp", ""):
+            elif "category/" in item.get("cobp", ""):
+                result_item = {
+                    'label': item["title"],
+                    'icon': item.get("thumbnail", addon_icon),
+                    'fanart': item.get("fanart", addon_fanart),
+                    'mode': "COBP",
+                    'url': item.get("cobp", ""),
+                    'folder': True,
+                    'imdb': "0",
+                    'content': "files",
+                    'season': "0",
+                    'episode': "0",
+                    'info': {},
+                    'year': "0",
+                    'context': get_context_items(item),
+                    "summary": item.get("summary", None)
+                }
+            elif "tag/" in item.get("cobp", ""):
+                result_item = {
+                    'label': item["title"],
+                    'icon': item.get("thumbnail", addon_icon),
+                    'fanart': item.get("fanart", addon_fanart),
+                    'mode': "COBP",
+                    'url': item.get("cobp", ""),
+                    'folder': True,
+                    'imdb': "0",
+                    'content': "files",
+                    'season': "0",
+                    'episode': "0",
+                    'info': {},
+                    'year': "0",
+                    'context': get_context_items(item),
+                    "summary": item.get("summary", None)
+                }
+            elif "most-" in item.get("cobp", ""):
                 result_item = {
                     'label': item["title"],
                     'icon': item.get("thumbnail", addon_icon),
@@ -118,14 +156,16 @@ def get_stream(url):
                    "    <summary>%s</summary>"\
                    "</item>" % (title,thumbnail,vid_page_url, title)
 
-            if count == 24:
-                pagination = dom_parser.parseDOM(html, 'li', attrs={'class':'next'})[0]
-                next_page = dom_parser.parseDOM(pagination, 'a', ret='href')[0]
-                xml += "<dir>"\
-                       "    <title>Next Page</title>"\
-                       "    <thumbnail>%s</thumbnail>"\
-                       "    <cobp>%s</cobp>"\
-                       "</dir>" % (addon_icon,next_page)
+        try:
+            pagination = dom_parser.parseDOM(html, 'li', attrs={'class':'next'})[0]
+            next_page = dom_parser.parseDOM(pagination, 'a', ret='href')[0]
+            xml += "<dir>"\
+                   "    <title>Next Page</title>"\
+                   "    <thumbnail>%s</thumbnail>"\
+                   "    <cobp>%s</cobp>"\
+                   "</dir>" % (next_icon,next_page)
+        except:
+            pass
     except:
         pass
     jenlist = JenList(xml)
