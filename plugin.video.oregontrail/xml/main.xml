@@ -1,0 +1,19 @@
+<oregontrail>
+    <main>
+        <dir>
+            <title>Wild West Documentaries</title>
+            <meta>
+                <summary>Various documentary films about the Wild West</summary>
+            </meta>
+            <link>file://documentaries.xml</link>
+        </dir>
+
+        <dir>
+            <title>Wild West on the Tube</title>
+            <meta>
+                <summary>Wild West TV Shows, Movies, and More</summary>
+            </meta>
+            <link>file://tube.xml</link>
+        </dir>
+    </main>
+</oregontrail>
