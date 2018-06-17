@@ -11,13 +11,6 @@
 </dir>
 
 <dir>
-    <name>Halloween Boxsets</name>
-    <link>file://hbox.xml</link>
-    <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
-    <fanart>special://home/addons/plugin.video.tistheseason/resources/media/halloweenfanart.jpg</fanart>
-</dir>
-
-<dir>
     <title>Hammer Horror</title>
     <link>file://hhammer.xml</link>
     <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/halloween.png</thumbnail>
