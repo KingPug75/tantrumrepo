@@ -1,6 +1,6 @@
 <dir>
-    <name>[B][COLOR white]Atrain's Picks[/COLOR][/B]</name>
-    <link>file://atrainspicks.xml</link>
+    <name>[B][COLOR white]Top Seasonal Picks[/COLOR][/B]</name>
+    <link>file://toppicks.xml</link>
     <thumbnail>special://home/addons/plugin.video.tistheseason/resources/media/atrain.png</thumbnail>
     <fanart>special://home/addons/plugin.video.tistheseason/fanart.jpg</fanart>
 </dir>

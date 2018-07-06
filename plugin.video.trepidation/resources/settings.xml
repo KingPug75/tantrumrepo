@@ -3,7 +3,7 @@
     <category label="Customization">
         <setting label="32507" type="lsep"/>
         <setting label="30717" type="bool" id="metadata" default="true"/>
-        <setting label="Disable metadata Dialog" type="bool" id="disable_metadata_dialog" default="true"/>
+        <setting label="Disable Metadata Dialog" type="bool" id="disable_metadata_dialog" default="true"/>
         <setting label="32508" type="select" values="Trakt|TMDB" id="movie_metadata_provider" default="Trakt"/>
         <setting label="32509" type="select" values="Trakt|TVDB" id="tv_metadata_provider" default="Trakt"/>
         <setting label="32510" type="lsep" visible="false"/>
@@ -73,10 +73,14 @@
         <setting id="TRAKT_REFRESH_TOKEN" label="" type="text" visible="false"/>
     </category>
 
-    <!-- login - future features for playlisters -->
+    <!-- Dev mode - future features for playlisters and developers -->
     <category label="30770">
         <setting id="debug" type="bool" label="30758" default="false" visible="true"/>
         <setting id="root_xml" type="text" label="30060" option="hidden" default="file://main.xml" visible="false"/>
+        <setting id="message_xml_url" type="text" label="News File Location" option="hidden" default="special://home/addons/plugin.video.trepidation/news.xml" visible="false"/>
+        <setting label="Current API Set Version" id="current_version" type="text" option="hidden" default="1" visible="false"/>
+        <setting label="Enable Service Notification" id="enable_notification" type="bool" option="hidden" default="true" visible="false"/>
+        <setting label="Disable Service after First Run" id="disable_service" type="bool" option="hidden" default="true" visible="false"/>
         <setting id="search_db_location" type="text" label="30061" option="hidden" default="" visible="false"/>
     </category>
 
