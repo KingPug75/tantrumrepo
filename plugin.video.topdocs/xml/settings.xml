@@ -1,0 +1,64 @@
+<topdocs>
+    <mysettings>
+        <plugin>
+            <title>TOP DOCUMENTARIES: Customization</title>
+            <meta>
+                <summary>Open the Settings for the addon on the Customization tab</summary>
+            </meta>
+            <mysettings>0/0</mysettings>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/settings.png</thumbnail>
+        </plugin>
+
+        <plugin>
+            <title>TOP DOCUMENTARIES: Cache</title>
+            <meta>
+                <summary>Open the Settings for the addon on the General tab</summary>
+            </meta>
+            <mysettings>1/0</mysettings>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/settings.png</thumbnail>
+        </plugin>
+        
+        <plugin>
+            <title>TOP DOCUMENTARIES: Scraper Setup</title>
+            <meta>
+                <summary>Open the Settings for the addon on the General tab</summary>
+            </meta>
+            <mysettings>2/0</mysettings>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/settings.png</thumbnail>
+        </plugin>
+
+        <plugin>
+            <title>TOP DOCUMENTARIES: Resolver Setup</title>
+            <meta>
+                <summary>Open the Settings for the addon on the Resolvers tab</summary>
+            </meta>
+            <mysettings>3/0</mysettings>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/settings.png</thumbnail>
+        </plugin>
+        
+        <plugin>
+            <title>REAL-DEBRID: Re-Authorize (ResolveURL)</title>
+            <meta>
+                <summary>(Re)Authorize Real-Debrid in the Resolve URL Addon</summary>
+            </meta>
+            <link>plugin://script.module.resolveurl/?mode=auth_rd</link>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/settings.png</thumbnail>
+        </plugin>
+
+        <item>
+            <title>YOUTUBE: Daily Limit Error Fix</title>
+            <meta>
+                <summary>Apply fix for YouTube Daily Limit Error</summary>
+            </meta>
+            <ytapi>Top Documentaries Daily Limit Fix/AIzaSyC7m0BfFiCgBcZTvynt22arZ238yQP-jI0/183165343244-r614ajldlb2fr0f6knvpp9h5devangou.apps.googleusercontent.com/9EXVjtJMJjcrMFiXcdycIZgo</ytapi>
+        </item>
+
+        <item>
+            <title>YOUTUBE: Live and CAMS Fix</title>
+            <meta>
+                <summary>Apply fix for YouTube Live playback issues and if you have problems with CAMS</summary>
+            </meta>
+            <ytdash></ytdash>
+        </item>
+    </mysettings>
+</topdocs>

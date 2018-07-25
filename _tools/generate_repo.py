@@ -10,21 +10,23 @@
 """ 04/12/2018 """
 """     Modified by MuadDib: Fixed md5 hashing issue for addons.xml file """
 """     Modified by MuadDib: Added excludes line to config.ini. This is a comma separated value of file extensions to not add to zip file in releases """
-""" 07/05/2018 """
-"""     Modified by MuadDib for Python 3.7 """
 
 """ This file is "as is", without any warranty whatsoever. Use as own risk """
+
+"""
+    Youtube Video Series for this script package:
+        Playlist: https://www.youtube.com/playlist?list=PLYkSOUo1Vu4ZN6l6xJ9fzJ-d0Y_-ACo68
+"""
 
 import os
 import hashlib
 import zipfile
 import shutil
 from xml.dom import minidom
-from builtins import str
 import glob
 import datetime
 import traceback
-import configparser
+from ConfigParser import SafeConfigParser
 
 class Generator:
     
@@ -39,7 +41,7 @@ class Generator:
         """
         Load the configuration
         """
-        self.config = configparser.ConfigParser()
+        self.config = SafeConfigParser()
         self.config.read('config.ini')
         
         self.tools_path=os.path.abspath(os.path.join(os.path.dirname(os.path.realpath(__file__))))
@@ -98,7 +100,7 @@ class Generator:
         if not os.path.exists(addonid):
             os.makedirs(addonid)
             
-        self._save_file( repo_xml, file=addonid + os.path.sep + "addon.xml" )
+        self._save_file( repo_xml.encode( "utf-8" ), file=addonid + os.path.sep + "addon.xml" )
         
 
     def _generate_zip_files ( self ):
@@ -178,7 +180,7 @@ class Generator:
                     # skip encoding format line
                     if ( line.find( "<?xml" ) >= 0 ): continue
                     # add line
-                    addon_xml += str( line.rstrip() + "\n" )
+                    addon_xml += unicode( line.rstrip() + "\n", "utf-8" )
                 # we succeeded so add to our final addons.xml text
                 addons_xml += addon_xml.rstrip() + "\n\n"
             except:
@@ -191,7 +193,7 @@ class Generator:
         # clean and add closing tag
         addons_xml = addons_xml.strip() + u"\n</addons>\n"
         # save file
-        self._save_file( addons_xml, file=self.output_path + "addons.xml" )
+        self._save_file( addons_xml.encode( "utf-8" ), file=self.output_path + "addons.xml" )
 
     def _generate_md5_file( self ):
         try:

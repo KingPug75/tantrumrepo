@@ -1,17 +1,29 @@
-<thedocs>
-    <dir>
-        <title>Documentary Heaven</title>
-        <link>file://docuheaven.xml</link>
-        <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/dheaven.png</thumbnail>
-    </dir>
-    <dir>
-        <title>Documentary Storm</title>
-        <link>file://docustorm.xml</link>
-        <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/dstorm.png</thumbnail>
-    </dir>
-    <dir>
-        <title>Top Documentaries</title>
-        <link>file://topdocs.xml</link>
-        <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/tdf.png</thumbnail>
-    </dir>
-</thedocs>
+<xml>
+    <topdocsmain>
+        <dir>
+            <title>Documentary Heaven</title>
+            <link>file://docuheaven.xml</link>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/dheaven.png</thumbnail>
+        </dir>
+        <dir>
+            <title>Documentary Storm</title>
+            <link>file://docustorm.xml</link>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/dstorm.png</thumbnail>
+        </dir>
+        <dir>
+            <title>Top Documentaries</title>
+            <link>file://topdocs.xml</link>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/tdf.png</thumbnail>
+        </dir>
+        <dir>
+            <title>Tube Documentaries</title>
+            <link>file://tubedocs.xml</link>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/tubedocs.png</thumbnail>
+        </dir>
+        <dir>
+            <title>Settings</title>
+            <link>file://settings.xml</link>
+            <thumbnail>special://home/addons/plugin.video.topdocs/resources/media/settings.png</thumbnail>
+        </dir>
+    </topdocsmain>
+</xml>

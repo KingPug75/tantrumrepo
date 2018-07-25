@@ -3,7 +3,7 @@
 # Addon Provider: MuadDib
 msgid ""
 msgstr ""
-"Project-Id-Version: Top Documentaries\n"
+"Project-Id-Version: Jen\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2017-11-04 18:56+0200\n"
 "Last-Translator: A. Dambledore\n"

@@ -1,5 +1,5 @@
-<xml>
-    <topdocs>
+<topdocs>
+    <topdocfilms>
         <dir>
             <title>9/11</title>
             <topdocs>tdcategory/911</topdocs>
@@ -124,5 +124,5 @@
             <title>Technology</title>
             <topdocs>tdcategory/technology</topdocs>
         </dir>
-    </topdocs>
-</xml>
+    </topdocfilms>
+</topdocs>
