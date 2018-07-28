@@ -35,7 +35,6 @@ BASEURL             = URL
 ADULTFILE           = BASEURL + base64.b64decode(b'YWR1bHQudHh0')
 ADVANCEDFILE        = BASEURL + base64.b64decode(b'YWR2YW5jZWQudHh0')
 ADVSETTINGSFILE     = xbmc.translatePath(os.path.join('special://profile/','advancedsettings.xml'))
-APKFILE             = BASEURL + base64.b64decode(b'YXBrLnR4dA==')
 CREDITSFILE         = BASEURL + base64.b64decode(b'Y3JlZGl0cy50eHQ=')
 KRYPTONFILE         = BASEURL + base64.b64decode(b'a3J5cHRvbi50eHQ=')
 NOTIFICATION        = BASEURL + base64.b64decode(b'bm90aWZ5LnR4dA==')
@@ -81,7 +80,6 @@ THEME1              = '[COLOR '+COLORNAME+'][B]%s[/B][/COLOR]'
 #######################################################################
 # Menu Title Variables
 ADULT               = base64.b64decode(b'QWR1bHQgQnVpbGRzIE1lbnU=')
-APKNAME             = base64.b64decode(b'QVBLIE1lbnU=')
 KRYPTON             = base64.b64decode(b'S3J5cHRvbiBCdWlsZHMgTWVudQ==')
 BACKUPBUILD         = base64.b64decode(b'QmFja3VwIEJ1aWxkIChFeGM6IERhdGFiYXNlcyAmIFRodW1ibmFpbHMp')
 BACKUPLOGIN         = base64.b64decode(b'QmFja3VwIExvZ2luIERhdGE=')
@@ -124,7 +122,6 @@ CLEARADVTITLE       = base64.b64decode(b'Q2xlYXIgQWxsIEFkdmFuY2VkIFNldHRpbmdz')
 #######################################################################
 # Active Menu Variables
 ADULTACTIVE         = THISADDON.getSetting('adult')
-APKACTIVE           = THISADDON.getSetting('apk')
 DEVELOPERACTIVE     = THISADDON.getSetting('developer')
 FIXESACTIVE         = THISADDON.getSetting('fixes')
 THEMEACTIVE         = THISADDON.getSetting('theme')
@@ -166,7 +163,6 @@ FORCECLOSE_ICON     = ART + 'ForceClose.png'
 CLEARCRASH_ICON     = ART + 'clearcrash.png'
 VIEWLOG_ICON        = ART + 'viewlog.png'
 ICONMAINT           = ART + 'maintenance.png'
-APK_ICON            = ART + 'apk.png'
 #######################################################################
 
 #######################################################################

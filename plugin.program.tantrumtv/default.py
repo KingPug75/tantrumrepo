@@ -18,6 +18,7 @@ from resources.libs import youtube
 global parse
 #######################################################################
 
+
 #######################################################################
 # Global Variables
 AddonID        = glo_var.AddonID
@@ -68,15 +69,12 @@ THEME1         = glo_var.THEME1
 VERSION        = THISADDON.getAddonInfo('version')
 ADDF           = base_info.addFile
 ANDROID        = base_info.getS('android')
-APK            = glo_var.APKFILE
-ARTAPK         = glo_var.APK_ICON
-apk            = base_info.getS('apk')
 ####################################################################################
+
 
 #######################################################################
 # Menu Title Variables
 ADULTTITLE     = glo_var.ADULT
-APKTITLE       = glo_var.APKNAME
 BUILDTITLE     = glo_var.BUILD
 CONTACTTITLE   = glo_var.CONTACTUS
 CREDITSTITLE   = glo_var.WIZCREDITS
@@ -117,20 +115,20 @@ CLEARADVTITLE  = glo_var.CLEARADVTITLE
 ROOTTITLE      = glo_var.ROOTTITLE
 ###################################################################################
 
+
 #######################################################################
 # Active Menu Variables
 ADULTACTIVE    = glo_var.ADULTACTIVE
 ADVANCEDFILE   = glo_var.ADVANCEDFILE
-APKACTIVE      = glo_var.APKACTIVE
 DEVACTIVE      = glo_var.DEVELOPERACTIVE
 FIXESACTIVE    = glo_var.FIXESACTIVE
 THEMEACTIVE    = glo_var.THEMEACTIVE
 ###################################################################################
 
+
 #######################################################################
 # Menu File Variables
 ADULTFILE      = glo_var.ADULTFILE
-APKFILE        = glo_var.APKFILE
 NOTIFICATION   = glo_var.NOTIFICATION
 SUPPORT        = glo_var.SUPPORT
 THEMEFILE      = glo_var.THEMEFILE
@@ -139,15 +137,13 @@ WIZARDFILE     = glo_var.WIZARDFILE
 WIZVER         = glo_var.WIZVER
 ###################################################################################
 
+
 ###################################################################################
 # Categories/Default Menu
 def Categories():
     base_info.addDir(themehelper.menuTitle(BUILDTITLE), 'url', 'builds', ARTBU,FANART,'')
     if ADULTACTIVE == 'true': base_info.addDir(themehelper.menuTitle(ADULTTITLE),'url','adult',ARTA,FANART,'')
     if THEMEACTIVE == 'true': base_info.addDir(themehelper.menuTitle(THEMETITLE),'url','thememenu',ICON_THEMES,FANART,'')
-    if APKACTIVE == 'true':
-        if ('android' in base_info.platform()) or (DEVELOPER == 'true'):
-            base_info.addDir(themehelper.menuTitle(APKTITLE),'url','apkinstaller',ARTAPK,FANART,'')
     base_info.addDir(themehelper.menuTitle(SAVETITLE),'url','savedata',ICON_SAVE,FANART,'')
     base_info.addDir(themehelper.menuTitle(RESTORETITLE),'url','restoremenu',ARTR,FANART,'')
     base_info.addDir(themehelper.menuTitle(MAINTTITLE),'url','maint',ARTM,FANART,'')
@@ -158,6 +154,7 @@ def Categories():
     base_info.addDir2(themehelper.menuTitle(CREDITSTITLE),'url','wizcreds',ARTC,FANART,'')
     xbmc.executebuiltin('Container.SetViewMode(50)')
 ###################################################################################
+
 
 ###################################################################################
 #Builds Menu
@@ -175,6 +172,7 @@ def Builds_Menu():
         base_info.addDir2(themehelper.buildTitle(name),url,'install',iconimage,fanart,description)
         xbmc.executebuiltin('Container.SetViewMode(50)')
 ####################################################################################
+
 
 ###################################################################################
 # Adult Menu
@@ -194,6 +192,7 @@ def Adult_Menu():
 
 ####################################################################################
 
+
 ###################################################################################
 #Krypton Build Menu
 def Krypton_Menu():
@@ -211,6 +210,7 @@ def Krypton_Menu():
         xbmc.executebuiltin('Container.SetViewMode(50)')
 ####################################################################################
 
+
 ###################################################################################
 #Theme Menu
 def Theme_Menu():
@@ -225,17 +225,6 @@ def Theme_Menu():
     xbmc.executebuiltin('Container.SetViewMode(50)')
 ####################################################################################
 
-####################################################################################
-#apk menu
-def apkMenu():
-    link = base_info.OPEN_URL(APK).replace('\n','').replace('\r','').replace('\t','')
-    match = re.compile('name="(.+?)".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult="(.+?)".+?escription="(.+?)"').findall(link)
-    if len(match) > 0:
-        for name, url, icon, fanart, adult, description in match:
-            base_info.addFile(themehelper.actionTitlePlain(name), 'apkinstall', name, url, description=description, icon=icon, fanart=fanart, themeit=THEME1)
-        else: base_info.loga("[APK Menu] ERROR: Invalid Format.")
-    base_info.setView('files', 'viewType')
-####################################################################################
 
 ###################################################################################
 #Backup Menu
@@ -434,8 +423,6 @@ elif mode=='viewwizlog'     : base_info.viewLogFile('wizard.log')
 elif mode=='wizcreds'       : contact.credits(CREDITSFILE)
 elif mode=='wizardupdate'   : base_info.wizardUpdate()
 elif mode=='youtubefix'     : youtube.YoutubeFix()
-elif mode=='apkinstaller'   : apkMenu()
-elif mode=='apkinstall'     : base_info.apkInstaller(name, url)
 #######################################################################
 
 #######################################################################

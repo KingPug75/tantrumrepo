@@ -70,7 +70,6 @@ ONEWEEK        = TODAY + timedelta(days=7)
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 EXCLUDES       = glo_var.EXCLUDES
 #BUILDFILE      = glo_var.BUILDFILE
-#APKFILE        = glo_var.APKFILE
 AUTOUPDATE     = glo_var.AUTOUPDATE
 WIZARDFILE     = glo_var.WIZARDFILE
 NOTIFICATION   = glo_var.NOTIFICATION
@@ -224,50 +223,6 @@ def checkTheme(name, theme, ret):
 			elif ret == 'all':           return name, theme, url, icon, fanart, description
 	else: return False
 
-def checkApk(name, ret):
-	if not workingURL(APKFILE) == True: return False
-	link = openURL(APKFILE).replace('\n','').replace('\r','').replace('\t','')
-	match = re.compile('name="%s".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult="(.+?)".+?escription="(.+?)"' % name).findall(link)
-	if len(match) > 0:
-		for url, icon, fanart, adult, description in match:
-			if   ret == 'url':           return url
-			elif ret == 'icon':          return icon
-			elif ret == 'fanart':        return fanart
-			elif ret == 'adult':         return adult
-			elif ret == 'description':   return description
-			elif ret == 'all':           return name, url, icon, fanart, adult, description
-	else: return False
-
-def checkAddon(name, ret):
-	if not workingURL(APKFILE) == True: return False
-	link = openURL(APKFILE).replace('\n','').replace('\r','').replace('\t','')
-	match = re.compile('name="(%s)".+?lugin="(.+?)".+?rl="(.+?)".+?epository="(.+?)".+?epositoryxml="(.+?)".+?epositoryurl="(.+?)".+?con="(.+?)".+?anart="(.+?)".+?dult="(.+?)".+?escription="(.+?)"' % name).findall(link)
-	if len(match) > 0:
-		for plugin, url, repository, repositoryxml, repositoryurl, icon, fanart, adult, description in match:
-			if   ret == 'plugin':        return plugin
-			elif ret == 'url':           return url
-			elif ret == 'repository':    return repository
-			elif ret == 'repositoryxml': return repositoryxml
-			elif ret == 'repositoryurl': return repositoryurl
-			elif ret == 'icon':          return icon
-			elif ret == 'fanart':        return fanart
-			elif ret == 'adult':         return adult
-			elif ret == 'description':   return description
-			elif ret == 'all':           return name, plugin, url, repository, repositoryurl, icon, fanart, adult, description
-	else: return False
-
-def checkTutorial(name, ret):
-	if not workingURL(APKFILE) == True: return False
-	link = openURL(APKFILE).replace('\n','').replace('\r','').replace('\t','')
-	match = re.compile('name="%s".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)"' % name).findall(link)
-	if len(match) > 0:
-		for url, icon, fanart, description in match:
-			if   ret == 'url':           return url
-			elif ret == 'icon':          return icon
-			elif ret == 'fanart':        return fanart
-			elif ret == 'description':   return description
-			elif ret == 'all':           return name, url, icon, fanart, description
-	else: return False
 
 def checkWizard(ret):
 	if not workingURL(WIZARDFILE) == True: return False
@@ -897,25 +852,6 @@ def convertSpecial(url, over=False):
 	log("[Convert Paths to Special] Complete", xbmc.LOGNOTICE)
 	if over == False: LogNotify("[COLOR %s]%s[/COLOR]" % (COLOR1, ADDONTITLE), "[COLOR %s]Convert Paths to Special: Complete![/COLOR]" % COLOR2)
 
-def latestApk(apk):
-	if apk == "kodi":
-		kodi  = "https://kodi.tv/download/"
-		link  = openURL(kodi).replace('\n','').replace('\r','').replace('\t','')
-		match = re.compile("<h2>Current release:.+?odi v(.+?) &#8220;(.+?)&#8221;</h2>").findall(link)
-		if len(match) == 1:
-			ver    = match[0][0]
-			title  = match[0][1]
-			apkurl = "http://mirrors.kodi.tv/releases/android/arm/kodi-%s-%s-armeabi-v7a.apk" % (ver, title)
-			return ver, apkurl, "Latest Official Version of Kodi v%s" % ver
-		else: return False
-	elif apk == "spmc":
-		spmc  = 'https://github.com/koying/SPMC/releases/latest/'
-		link  = openURL(spmc).replace('\n','').replace('\r','').replace('\t','')
-		match = re.compile(".+?class=\"release-title\">(.+?)</h1>.+?").findall(link)
-		ver   = re.sub('<[^<]+?>', '', match[0]).replace(' ', '')
-		apkurl = 'https://github.com/koying/SPMC/releases/download/%s-spmc/SPMC-armeabi-v7a_%s.apk' % (ver, ver)
-		return ver, apkurl, "Latest Official Version of SPMC v%s" % ver
-
 def clearCrash():  
 	files = []
 	for file in glob.glob(os.path.join(LOGPATH, 'xbmc_crashlog*.*')):
@@ -1030,26 +966,6 @@ def convertText(type):
 			writing += 'fanart="%s"\n' % fanart
 			writing += 'adult="no"\n'
 			writing += 'description="Download %s from %s"\n' % (name, ADDONTITLE)
-	elif type == "apks":
-		working = workingURL(APKFILE)
-		if APKFILE == 'http://':
-			DIALOG.ok(ADDONTITLE, "[COLOR %s]Error converting Text File:[/COLOR]" % COLOR2, "[COLOR %s]APK File set to 'http://' in glo_var.py[/COLOR]" % COLOR1)
-			return
-		if not working == True:
-			DIALOG.ok(ADDONTITLE, "[COLOR %s]Error converting Text File:[/COLOR]" % COLOR2, "[COLOR %s]%s[/COLOR]" % (COLOR1, working))
-			return
-		filename = os.path.join(ADDONDATA, 'apk.txt')
-		writing = ''
-		a = openURL(APKFILE).replace('\n','').replace('\r','').replace('\t','')
-		match = re.compile('name="(.+?)".+?rl="(.+?)".+?con="(.+?)".+?anart="(.+?)"').findall(a)
-		for name, url, icon, fanart in match:
-			if not writing == '': writing += '\n'
-			writing += 'name="%s"\n' % name
-			writing += 'url="%s"\n' % url
-			writing += 'icon="%s"\n' % icon
-			writing += 'fanart="%s"\n' % fanart
-			writing += 'adult="no"\n'
-			writing += 'description="Download %s from %s"\n\n' % (name, ADDONTITLE)
 	f = open(filename, 'w'); f.write(writing); f.close()
 	DIALOG.ok(ADDONTITLE, "[COLOR %s]The text file for [COLOR %s]%s[/COLOR] has been written to support v0.1.6 of Aftermath Wizard." % (COLOR2, COLOR1, type.title()), "Path: [/COLOR][COLOR %s]%s[/COLOR]" % (COLOR1, filename.replace(USERDATAPATH, '')))
 
