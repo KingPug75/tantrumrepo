@@ -1,6 +1,16 @@
 <oregontrail>
     <main>
         <dir>
+            <title>The Duke Movie List</title>
+            <meta>
+                <summary>Movie Time with John Wayne</summary>
+            </meta>
+            <duke>all</duke>
+            <thumbnail>https://pbs.twimg.com/profile_images/1004442158248554497/k4iRjaEN_400x400.jpg</thumbnail>
+            <fanart>http://www.fullhdwpp.com/wp-content/uploads/John-Wayne-quote_www.fullhdwpp.com_.jpg</fanart>
+        </dir>
+
+        <dir>
             <title>Wild West Documentaries</title>
             <meta>
                 <summary>Various documentary films about the Wild West</summary>
