@@ -39,3 +39,6 @@ ver 0.90
 
 ver 1.0
     - Ported over to Jen using my plugin scrapers
+
+ver 1.1
+    - Highlights updated
